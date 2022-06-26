@@ -1,0 +1,22 @@
+<div
+  ngFileDrop
+  (uploadOutput)="handleUpload($event)"
+  [options]="options"
+  class="w-full h-300 flex flex-col justify-center items-center border border-dashed border-indigo-600 py-40 px-150"
+>
+  <p>Drag & Drop file here or</p>
+  <label class="cursor-pointer text-slate-800 font-medium mx-5">
+    <input
+      accept="image/x-png,image/gif,image/jpeg"
+      [options]="options"
+      class="hidden"
+      type="file"
+      ngFileSelect
+      (uploadOutput)="handleUpload($event)"
+    />
+    Browse
+  </label>
+  <p class="mt-10">Total: {{ files.length }} files</p>
+  <p class="mt-10">Size: {{ size }} bytes</p>
+  <p class="mt-30">Estimate: {{ isLoading ? 'Calculating the estimate...' : cost + ' SOL' }}</p>
+</div>

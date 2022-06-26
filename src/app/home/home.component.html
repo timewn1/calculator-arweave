@@ -1,0 +1,14 @@
+<app-navbar></app-navbar>
+<section class="container py-40">
+  <div class="w-full px-5 flex flex-col items-center">
+    <p *ngIf="!account" class="text-center my-5 text-slate-700">Please connect your wallet.</p>
+
+    <div *ngIf="account">
+      <p class="mb-20">
+        You current balance: <span class="text-18">{{ balance }}</span
+        ><span class="ml-5">SOL</span>
+      </p>
+      <app-file-uploader *ngIf="account"></app-file-uploader>
+    </div>
+  </div>
+</section>
